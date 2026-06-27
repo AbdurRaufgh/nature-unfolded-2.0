@@ -7,279 +7,110 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        /* CSS RESET & VARIABLES */
-        :root {
-            --bg-color: #FDFBF7;
-            --primary-color: #1E3F20;
-            --accent-color: #E5A93C;
-            --accent-hover: #C9922B;
-            --text-dark: #2B3A2C;
-            --text-light: #606C5D;
-            --white: #FFFFFF;
-        }
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">Nature Unfolded</a>
+            <span class="badge">Coming Soon</span>
+        </div>
+    </nav>
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+    <header class="hero">
+        <div class="container">
+            <h1>Ditch the Plastic.<br>Unfold the Freshness.</h1>
+            <p>Keep your food naturally fresh with 100% organic, reusable beeswax wraps. We are launching soon, and space in our first batch is limited.</p>
+            
+            <form id="hero-form" class="form-container" onsubmit="handleFormSubmit(event, 'hero-form', 'hero-success')">
+                <input type="email" placeholder="Enter your email address..." required>
+                <button type="submit">Get Early Access</button>
+            </form>
+            
+            <div id="hero-success" class="success-message">
+                🎉 Welcome to the inner circle! We've reserved your 15% discount. Keep an eye on your inbox for our launch announcement.
+            </div>
 
-        /* UTILITIES */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+            <p class="form-subtext">🔒 Secure early access. Zero spam. Only fresh updates.</p>
+        </div>
+    </header>
 
-        .section-padding {
-            padding: 5rem 0;
-        }
+    <hr class="container">
 
-        /* NAVBAR */
-        nav {
-            padding: 1.5rem 0;
-            border-bottom: 1px solid rgba(30, 63, 32, 0.1);
-        }
+    <section class="container section-padding">
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🌱</span>
+                <h3>100% Natural</h3>
+                <p>Made from organic cotton, pure beeswax, jojoba oil, and sustainably harvested tree resin.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🔄</span>
+                <h3>Reusable & Washable</h3>
+                <p>Just rinse with cool water, air dry, and use it again and again for up to an entire year.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🌍</span>
+                <h3>Zero Waste</h3>
+                <p>Fully compostable at the end of its life cycle. Better for your food, beautiful for the planet.</p>
+            </div>
+        </div>
+    </section>
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    <section class="container">
+        <div class="how-it-works">
+            <h2 class="section-title">Simple to Use, Easy to Love</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Wrap</h4>
+                    <p>Use the warmth of your hands to mold the wrap smoothly over a bowl or food item.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Seal</h4>
+                    <p>As the wrap cools within seconds, it creates a tight, completely natural protective seal.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Repeat</h4>
+                    <p>Wash with mild soap and cool water, air dry, and get ready to use it all over again.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
+    <section class="footer-cta">
+        <div class="container">
+            <h2>Be Part of the Unfolding.</h2>
+            <p>Join our community of eco-conscious kitchen lovers today and catch the exact minute we go live.</p>
+            
+            <form id="footer-form" class="form-container" onsubmit="handleFormSubmit(event, 'footer-form', 'footer-success')">
+                <input type="email" placeholder="Enter your email address..." required>
+                <button type="submit">Join the Waitlist</button>
+            </form>
 
-        .badge {
-            background-color: rgba(30, 63, 32, 0.08);
-            color: var(--primary-color);
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
+            <div id="footer-success" class="success-message">
+                🎉 You're on the list! We'll reach out the second our digital doors open. Thank you for supporting sustainable freshness.
+            </div>
+        </div>
+    </section>
 
-        /* HERO SECTION */
-        .hero {
-            text-align: center;
-            padding: 6rem 0 4rem 0;
-            background: radial-gradient(circle at top right, rgba(229, 169, 60, 0.05), transparent 40%);
-        }
+    <script>
+        function handleFormSubmit(event, formId, successId) {
+            event.preventDefault();
+            
+            const form = document.getElementById(formId);
+            const successMsg = document.getElementById(successId);
+            const emailInput = form.querySelector('input[type="email"]').value;
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            color: var(--primary-color);
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+            console.log("New Subscriber Captured: " + emailInput);
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto 2.5rem auto;
+            form.style.display = 'none';
+            successMsg.style.display = 'block';
         }
+    </script>
 
-        /* FORM STYLING */
-        .form-container {
-            max-width: 550px;
-            margin: 0 auto;
-            background: var(--white);
-            padding: 0.5rem;
-            border-radius: 100px;
-            box-shadow: 0 10px 30px rgba(30, 63, 32, 0.05);
-            display: flex;
-            border: 1px solid rgba(30, 63, 32, 0.1);
-            transition: focus-within 0.3s ease;
-        }
-
-        .form-container:focus-within {
-            border-color: var(--accent-color);
-            box-shadow: 0 10px 30px rgba(229, 169, 60, 0.15);
-        }
-
-        .form-container input[type="email"] {
-            flex: 1;
-            border: none;
-            background: transparent;
-            padding: 0 1.5rem;
-            font-family: inherit;
-            font-size: 1rem;
-            color: var(--text-dark);
-            outline: none;
-        }
-
-        .form-container button {
-            background-color: var(--accent-color);
-            color: var(--white);
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 100px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-
-        .form-container button:hover {
-            background-color: var(--accent-hover);
-        }
-
-        .form-subtext {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            margin-top: 1rem;
-        }
-
-        /* SUCCESS MESSAGE */
-        .success-message {
-            display: none;
-            background-color: rgba(30, 63, 32, 0.05);
-            color: var(--primary-color);
-            padding: 1.5rem;
-            border-radius: 16px;
-            max-width: 550px;
-            margin: 0 auto;
-            font-weight: 600;
-            border: 1px solid rgba(30, 63, 32, 0.1);
-        }
-
-        /* DIVIDER */
-        hr {
-            border: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(30, 63, 32, 0.1), transparent);
-            margin: 2rem 0;
-        }
-
-        /* FEATURES SECTION */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            margin-top: 2rem;
-        }
-
-        .feature-card {
-            background: var(--white);
-            padding: 2.5rem 2rem;
-            border-radius: 20px;
-            border: 1px solid rgba(30, 63, 32, 0.05);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-
-        .feature-card h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary-color);
-            font-size: 1.4rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .feature-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        /* HOW IT WORKS SECTION */
-        .how-it-works {
-            background-color: rgba(30, 63, 32, 0.03);
-            border-radius: 32px;
-            padding: 4rem 2rem;
-            margin: 4rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 3rem;
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .step {
-            text-align: center;
-            position: relative;
-        }
-
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary-color);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            margin: 0 auto 1rem auto;
-        }
-
-        .step h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .step p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        /* FOOTER CTA */
-        .footer-cta {
-            text-align: center;
-            padding: 5rem 0;
-            background: linear-gradient(180deg, transparent, rgba(229, 169, 60, 0.05));
-        }
-
-        .footer-cta h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .footer-cta p {
-            color: var(--text-light);
-            margin-bottom: 2rem;
-        }
-
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .features-grid,
+</body>
+</html>
