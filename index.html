@@ -3,33 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nature-Unfolded | Sustainable Food Storage</title>
+    <title>Nature-Unfolded | Premium Sustainable Storage</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Premium serif font for a high-end look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <main class="hero-container">
         <header class="brand-header">
-            <span class="logo-text">Nature-Unfolded</span>
+            <span class="logo-text">Nature—Unfolded</span>
         </header>
 
         <section class="hero-content">
-            <h1 class="main-heading">Ditch plastic wrap.<br>Keep food fresh naturally.</h1>
-            <p class="subheading">We are crafting premium, reusable beeswax wraps designed to eliminate single-use plastic from your kitchen. Join the waitlist for exclusive launch updates and early-bird discounts.</p>
+            <h1 class="main-heading">Ditch plastic wrap.<br><em>Keep food fresh naturally.</em></h1>
+            <p class="subheading">We are crafting premium, reusable beeswax wraps designed to eliminate single-use plastics. Join our exclusive inner circle for launch updates, early access, and sustainable living insights.</p>
 
             <!-- 
-              Replace 'your-email@gmail.com' with your actual email address. 
-              Formsubmit will securely send signups straight to your inbox.
+              Replace 'heritagefoodexp@gmail.com' with your actual email address.
             -->
-            <form action="https://formsubmit.co/justarauf@gmail.com" method="POST" class="waitlist-form">
-                <!-- Redirects users to a clean thank-you page after they submit -->
-                <input type="hidden" name="_next" value="https://formsubmit.co/thanks">
-                <!-- Prevents spam bots -->
-                <input type="hidden" name="_captcha" value="false">
+            <form action="https://formsubmit.co/heritagefoodexp@gmail.com" method="POST" class="waitlist-form">
                 
-                <div class="input-group">
-                    <input type="email" name="email" placeholder="Enter your email address" required class="email-input">
-                    <button type="submit" class="submit-btn">Join Waitlist</button>
+                <!-- ADVANCED FORMSUBMIT SETTINGS (Cleans up your emails) -->
+                <!-- This changes the email subject line in your Gmail -->
+                <input type="hidden" name="_subject" value="✨ New Nature-Unfolded Waitlist Sign-up!">
+                <!-- This removes the captcha middle-man page to keep it seamless -->
+                <input type="hidden" name="_captcha" value="false">
+                <!-- This forces FormSubmit to show their clean, built-in success page -->
+                <input type="hidden" name="_template" value="table">
+
+                <div class="form-grid">
+                    <div class="input-field-wrapper">
+                        <label class="field-label">Full Name</label>
+                        <input type="text" name="name" placeholder="Rauf Ahmad" required class="form-input">
+                    </div>
+
+                    <div class="input-field-wrapper">
+                        <label class="field-label">Email Address</label>
+                        <input type="email" name="email" placeholder="you@example.com" required class="form-input">
+                    </div>
+
+                    <div class="input-field-wrapper full-width">
+                        <label class="field-label">Contact Number (Optional)</label>
+                        <input type="tel" name="phone" placeholder="+92 300 1234567" class="form-input">
+                    </div>
+
+                    <button type="submit" class="submit-btn">Secure Early Access</button>
                 </div>
             </form>
         </section>
